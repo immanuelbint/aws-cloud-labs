@@ -6,7 +6,7 @@ Welcome to my AWS Cloud Labs repository! This repo contains hands-on labs, mini-
 
 ## **Repository Structure**
 
-* `01_aws_basics/` – Basic AWS concepts, EC2, S3, IAM overview
+* `01_aws_basics/` – What is Cloud Computing, AWS concepts, EC2, S3, IAM overview
 * `02_ec2_s3_iam/` – Lab focused on EC2 instances, S3 buckets, and IAM roles
 * `03_vpc_networking/` – VPC setup, subnets, route tables, and security groups
 * `04_cloudwatch_monitoring/` – Monitoring, alarms, dashboards, and troubleshooting
