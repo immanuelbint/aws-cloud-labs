@@ -36,6 +36,18 @@ The main goal of this repository is to document my hands-on learning process, ke
 
 ---
 
+## Progress Tracker
+- [x] AWS Basics Overview
+- [ ] EC2 Basic Setup
+- [ ] IAM Hands-on
+- [ ] S3 Bucket + Versioning
+- [ ] VPC Networking
+- [ ] CloudWatch Alarm
+- [ ] Lambda Automation
+- [ ] Mini Project (Static Website on S3)
+
+---
+
 ## **Notes & Future Improvements**
 
 * Continuously update labs as skills grow.
