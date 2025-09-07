@@ -2,6 +2,10 @@
 
 In this hands-on lab, I’m practicing how to deploy basic infrastructure with AWS EC2 and configure IAM roles to securely upload/retrieve files from an S3 bucket.
 
+## Architecture Diagram
+
+![](resources/diagram.png)
+
 ## Requirement
 - AWS Account
 - User that has permission to
