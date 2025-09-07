@@ -16,6 +16,28 @@ With the concept of high availability, there is scalability, which can be vertic
 
 Allows to distibute traffic across backend of EC2 instances, and it can be spread out across multiple availability zones. ELB also support health check to ensure EC2 instances are healthy.
 
+There are 3 Load Balancer available on AWS
+- Application Load Balancer (v2) - HTTP based traffic
+    - operate at layer 7 (HTTP)
+    - load balancing to multiple HTTP applications across machines
+    - load balancing to multiple application on same machine (ex: containers)
+    - support HTTP/2 and WebSocket
+    - support redirect (example from HTTP to HTTPS)
+
+- Network Load Balancer (v2)
+    - operate at layer 4 (TCP and UDP)
+    - forward TCP and UDP to your instances
+    - handle millions of request per seconds
+    - ultra-low latency
+    - has one static IP per AZ, and supports assign Elastic IP (helpful for whitelist specific IP)
+    - used for extreme performance TCP and UDP traffic
+
+- Gateway Load Balancer
+    - operates at layer 3 (Network Layer)
+    - deploy and manage a fleet of 3rd party network virtual appliances in AWS (example: firewalls, intrusion detection and prevention, deep packet inspection system, payload manipulation)
+    - combines the following function, Transparent Network Gateway (single entry / exit for all traffic) and Load Balancer (distribute traffic to your virtual appliances) 
+    - uses GENEVE protocol on port 6081
+
 
 ### Auto Scaling Groups (ASG)
 
