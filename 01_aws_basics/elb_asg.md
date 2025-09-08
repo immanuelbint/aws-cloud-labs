@@ -42,3 +42,49 @@ There are 3 Load Balancer available on AWS
 ### Auto Scaling Groups (ASG)
 
 Allows to implement elasticity to our applications by spread our load across multiple availability zones and scaling accordingly. We scale EC2 instances based on demand of your system and can also replace unhealthy instances. Integration between the ASG and the ELB. This integration makes them a great combination. Together, they achieve high availability, scalability, elasticity, and agility in the Cloud.
+
+### ASG Scaling Policies
+
+- Dynamic Scaling
+    - Target Tracking Scaling
+        - simple to setup
+        - Example: want to set average ASG CPU to stay around 40%
+    - Simple / Step Scaling
+        - when cloudwatch alarm is triggered (example CPU > 70%), then add 2 units
+        - when cloudwatch alarm is triggered (example CPU < 30%), then remove 1 unit
+
+- Scheduled Scaling
+    - anticipate a scaling based on known usage patterns
+    - example: increase the min capacity to 10 at 5 pm on Fridays
+
+- Predictive scaling: continously forecast load and schedule scaling ahead
+
+### Good metrics to scale on ASG
+
+- CPUUtilization (average CPU utilization across your instances)
+- RequestCountPerTarget (to make number of request per EC2 is stable)
+- Average Network In / Out (if your application is network bound)
+- Any custom metric (that you push using cloudwatch)
+
+### Scaling Cooldowns
+
+- After scaling happens, you are in cooldown state (default 300 seconds)
+- During cooldown, ASG will not launch or terminate additional instances (to allow metric stabilize)
+- Advice: use ready to use AMI to reduce configuration time in order to be serve request faster and reduce cooldown period
+
+## AWS Auto Scaling
+
+- Backbone service of auto scaling for scalable resources in AWS
+- Amazon EC2 Auto Scaling Groups: launch or terminate EC2 instances
+- Amazon EC2 Spot Fleet requests: launch or terimate instances from a spot fleet request, or automatically replace instances that get interrupted for price of capacity reason
+- Amazon ECS: adjust the ECS service desired count up or down
+- Amazon DynamoDB (table or global secondary index): WCU & RCU
+
+There are 2 scaling plans available to use in AWS Auto Scaling
+- Dynamic scaling: create a target tracking scaling policy
+    - Optimize for availability: 40% resource utilization
+    - Balance availability and cost: 50% resource utilization
+    - Optimize for cost: 70% resource utilization
+    - Custom: choose your own metric and target value
+    - Options: disable scale-in, cooldown period, warmup time (for ASG)
+- Predictive scaling: continously forecast load and schedule scaling ahead
