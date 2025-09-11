@@ -55,3 +55,12 @@ Launch 3rd party high performance file system on AWS, it's fully managed service
 - snapshot, replication, low cost, compression and data de-duplication
 - point in time instantaneous cloning (helpful for test new workloads)
 
+## Amazon FSx for OpenZFS
+
+- managed openZFS file system on AWS
+- compatible with NFS (v3, v4, v4.1, v4.2)
+- move workloads running on ZFS to AWS
+- works with linux, windows, macOS, VMware Cloud, Amazon workspaces & appstream 2.0, Amazon EC2, ECS and EKS
+- Up to 1,000,000 IOPS with < 0.5 ms latency
+- snapshots, compression and low cost
+- point in time instantaneous cloning (helpful for test new workloads)
