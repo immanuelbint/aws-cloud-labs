@@ -63,6 +63,19 @@ Identifies resources that are shared externally, outside of your trusted zone, h
 
 Allows to manage security rules across your organization, including security groups, WAF, and Shield configurations.
 
+## Logging in AWS for security and compliance
+
+To help compliance requirement, AWS provides many service specific security and audit logs, service logs include :
+- CloudTrails - trace all API calls made in AWS account
+- Config Rules - for config & compliance over time
+- CloudWatch Logs - for full data retention
+- VPC Flow Logs - IP traffic within VPC
+- ELB access logs - metadata of request made to your load balancers
+- CloudFront logs - web distribution access logs
+- WAF logs - full logging of all request analyzed by the service
+
+Logs can be analyzed using AWS Athena if they stored in S3, it's recommend to encrypt logs in S3, and controll access using IAM & bucket policies, and MFA. Move logs to Glacier for cost savings.
+
 ## Key Takeaways
 
 - The AWS Shared Responsibility Model outlines the division of security tasks between AWS and the user.
