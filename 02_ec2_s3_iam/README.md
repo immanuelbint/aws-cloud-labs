@@ -50,7 +50,7 @@ In this hands-on lab, I’m practicing how to deploy basic infrastructure with A
 
     ![](resources/sec-groups.png)
 
-## Create a Custom IAM Policy
+## Step 3: Create a Custom IAM Policy
 
 Instead of using AmazonS3FullAccess, create a least-privilege policy:
 
@@ -83,7 +83,7 @@ Instead of using AmazonS3FullAccess, create a least-privilege policy:
 ![](resources/review-policy.png)
 
 
-## Create IAM Role for EC2
+## Step 4: Create IAM Role for EC2
 
 1. Go to IAM → Roles → Create role.
 
@@ -100,7 +100,7 @@ Instead of using AmazonS3FullAccess, create a least-privilege policy:
 ![](resources/name-roles.png)
 ![](resources/name-roles2.png)
 
-## Attach Role and User Data to EC2
+## Step 5: Attach Role and User Data to EC2
 
 1. Back in Launch instance → Advanced details, attach the IAM Role.
 
@@ -129,7 +129,7 @@ echo "Hello World, from $(hostname -f)" > /var/www/html/index.html
 ![](resources/ec2-success.png)
 ![](resources/httpd-check.png)
 
-## Test Upload and Get file to S3 Bucket
+## Step 6: Test Upload and Get file to S3 Bucket
 
 1. Connect to instance (SSH / EC2 Instance Connect).
 
