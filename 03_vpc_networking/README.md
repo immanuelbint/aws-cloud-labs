@@ -79,8 +79,6 @@ Create route table, to give internet access to public subnets, target to IGW we 
 ![](resources/add-route-to-publicroutetables.png)
 ![](resources/public-route-table2.png)
 
-3. (optional) Create Route Table for the private subnet , if using NAT Gateway.
-
 ## Step 4: Test the new VPC (Public Subnet)
 
 1. Create Security Group for Public Subnet:
@@ -107,12 +105,37 @@ Specify name, and description (optional), and attach VPC to VPC that we have cre
 
 ![](resources/launch-instance3.png)
 
-## (TODO) Step 5: Configure Private Subnet with NAT Gateway
+## Step 5: Configure Private Subnet with NAT Gateway
 
-Under Construction: Later I’ll add steps for:
-    - Creating NAT Gateway in Public Subnet
-    - Route Table for Private Subnet → NAT Gateway
-    - Launching EC2 in Private Subnet (outbound internet only, no inbound access)
+1. Now let's create NAT Gateway for private subnet to provide the internet access
+
+2. Go to VPC -> and select NAT Gateways -> Create NAT Gateway
+
+![](resources/create-natgw.png)
+
+3. Then wait for NAT Gateway state to be Available, after that select route table -> create route table for private route, and don't forget to attach private subnet
+
+![](resources/create-privateroute.png)
+![](resources/attach-privatesubnet.png)
+
+4. Add new routes to the PrivateRouteTable, destination `0.0.0.0/0` to `NAT Gateway`
+
+![](resources/create-routetonat.png)
+
+5. Now it's time to create 2 EC instance, one bastion and one instance in private subnet
+
+![](resources/bastion.png)
+
+Create 1 instance in private subnet
+![](resources/private-instance.png)
+
+As you can see, the private instance doesn't have IP Public, so we need to access private instance via ssh from bastion host
+
+![](resources/no-ip-public.png)
+
+6. From bastion host, ssh to private instance, and test ping google.com, as you can see, even though we don't attach public IP Address, the private instance can connect to the internet thanks to NAT Gateway
+
+![](resources/privateinstance-hasinternet.png)
 
 ## AWS CLI command
 
