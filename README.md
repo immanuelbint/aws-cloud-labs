@@ -43,7 +43,7 @@ The main goal of this repository is to document my hands-on learning process, ke
 - [x] S3 Bucket
 - [x] VPC Networking
 - [x] CloudWatch Alarm
-- [ ] Lambda Automation
+- [x] Lambda Automation
 - [ ] Mini Project
 
 ---
