@@ -26,9 +26,13 @@ In this hands-on lab, Iâ€™m practicing how to use AWS Lambda for automation. Iâ€
 
 1. Go to Lambda -> Create function -> Author from scratch
 
-2. Runtime: Python 3.9 (or Node.js, depends on preference)
+2. Runtime: Python 3.13 (or Node.js, depends on preference)
+
+![](resources/create-function.png)
 
 3. Execution role: crate new role with basic Lambda permissions
+
+![](resources/create-function-2.png)
 
 4. Example function (Hello World):
 
@@ -43,14 +47,20 @@ def lambda_handler(event, context):
     }
 ```
 
+![](resources/create-function-3.png)
+
 ## Step 2: Add Event Trigger
 
 Create S3 Event Trigger
 
 1. Create an S3 bucket, and enable event notification for PUT (object created)
 
+![](resources/s3-event.png)
+
 2. Set destination to Lambda function
 
+![](resources/s3-event-2.png)
+![](resources/s3-event-3.png)
 
 ## Step 3: Test the Function
 
@@ -58,14 +68,21 @@ S3 trigger
 
 1. Upload a file to the bucket -> check Lambda execution in `CloudWatch Logs`
 
+![](resources/upload-file.png)
+![](resources/upload-file-2.png)
 
 ## Step 4: Monitor with CloudWatch Logs
 
 1. Go to `CloudWatch` -> `Logs` -> `Log groups`
 
-2. Search your lambda function's log group (e.g., /aws/lambda/demoFunction)
+2. Search your lambda function's log group (e.g., /aws/lambda/DemoFunction)
 
 3. Validate print/debug output
+
+![](resources/cloudwatch-log.png)
+![](resources/cloudwatch-log-2.png)
+![](resources/cloudwatch-log-3.png)
+![](resources/monitor.png)
 
 ## Lesson Learned
 
