@@ -11,7 +11,7 @@ Welcome to my AWS Cloud Labs repository! This repo contains hands-on labs, mini-
 * `03_vpc_networking/` – VPC setup, subnets, route tables, and security groups
 * `04_cloudwatch_monitoring/` – Monitoring, alarms, dashboards, and troubleshooting
 * `05_lambda_automation/` – Lambda functions, automation, event triggers, and logs
-* `06_mini_project_webapp/` – Integrated mini-project with EC2, S3, IAM, Lambda, and monitoring
+* `06_mini_project_webapp/` – Integrated mini-project with Terraform EC2, S3, IAM, Lambda, and monitoring
 
 ---
 
